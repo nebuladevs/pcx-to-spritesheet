@@ -17,7 +17,7 @@ def generateSpriteSheet(fileList):
             newImage.paste(image, (0, height * fileIndex))
     
     newImage.show()
-    newImage.save("./sheets/legs.png")
+    newImage.save("./sheets/full-body.png")
     
     
 
