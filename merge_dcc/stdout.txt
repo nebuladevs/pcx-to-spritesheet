@@ -1,10 +1,10 @@
 MERGE_DCC freeware 1.5, by Paul SIRAMY, 5 November 2002
 DCC Decoder made with the precious help of Bilian BELCHEV
 =========================================================
-COF file               = SOTN1HT
+COF file               = PAA21HS
 # directions           = 16
-# frames per direction = 16
+# frames per direction = 15
 # layers               = 9
-Layers list            = TR LG RA LA HD S1 S2 SH RH
-dcc TR to load = SO\TR\SOTRLITTNHTH.DCC (colormap = none, block = 0)
-box = (-7, -59) - (6, -37) = 14 * 23 pixels
+Layers list            = RA RH LG TR S1 HD LA S2 SH
+dcc TR to load = PA\TR\PATRLITA21HS.DCC (colormap = none, block = 0)
+box = (-26, -63) - (24, -24) = 51 * 40 pixels

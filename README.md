@@ -1,24 +1,26 @@
 ### Diablo 2 SpriteSheet Generator (WIP)
 
-Script para automatizar a extração de sprites do jogo Diablo 2.
+Script to automate the extraction of sprites from the game Diablo 2.
 
-Para quem não sabe, o jogo Diablo 2, assim como diversos outros jogos dos anos 90~2000. Utiliza sprites 3D pré renderizados, separados em várias camadas. Por exemplo, existe uma camada para a cabeça, braço esquerdo, direito, pernas e torso. Quando você equipa um escudo dentro do jogo, a camada do braço esquerdo, carrega um sprite do escudo que você equipou.
+For those who don't know, the game Diablo 2, as well as several other games from the 90s~2000s. It uses pre-rendered 3D sprites, separated into several layers. For example, there is a layer for the head, left arm, right arm, legs and torso. When you equip a shield in-game, the left arm layer carries a sprite of the shield you equipped.
 
-Para cada animação (Idle, Walk, Run, Attack, etc ...) existem diversas peças que precisamos juntar para criar uma animação completa, de acordo com a necessidade (itens equipados, estado da vida do personagem, etc ...). A imagem abaixo exemplifica melhor essa técnica:
+For each animation (Idle, Walk, Run, Attack, etc...) there are several pieces that we need to put together to create a complete animation, according to the need (equipped items, character's health status, etc...). The image below best exemplifies this technique:
 <br>
 <br>
 <center><img src="./doc/1.PNG"/></center>
 <br>
-Dentro dos arquivos do jogo, existem arquivos com a extensão .COF. Esses arquivos possuem as animações com os layers montados. A partir desses arquivos nós conseguimos extrair os sprites, mas para ser possível programarmos a troca de itens no personagem, nós precisamos extrair os sprites de cada parte do corpo de forma separada. Separada a nível de animação e itens equipados.
+Within the game files, there are files with the extension .COF. These files have the animations with the layers mounted. From these files we were able to extract the sprites, but to be able to program the exchange of items in the character, we need to extract the sprites from each body part separately. Separated by animation level and equipped items.
 
 ### Requirements
  - Tenha o Diablo 2 instalado
+ - Python 3.x
+ - Python PIP
 
-### Como encontrar as animações para extrair os sprites?
+### How to find the animations to extract the sprites?
 
-Para ficar mais fácil a pré-visualização de como a animação deve ficar, indico utilizar a ferramenta [MPQ Viewer](https://github.com/collinsmith/riiablo#mpq-viewer). Através dela, conseguimos navegar nos arquivos do jogo e visualizar de forma animada os sprites.
+To make it easier to preview how the animation should look, I recommend using the tool [MPQ Viewer](https://github.com/collinsmith/riiablo#mpq-viewer). Through it, we can browse the game files and view the sprites.
 
-As animações possuem uma regra na nomenclatura, você pode ler sobre a nomenclatura na página 12 neste [PDF](https://github.com/collinsmith/riiablo#mpq-viewer). Nesse exemplo, vou utilizar uma animação que pode ser considerada como IDLE.
+Animations have a naming rule, you can read about naming on page 12 in this [PDF](https://github.com/collinsmith/riiablo#mpq-viewer). In this example, I will use an animation that can be considered as IDLE.
 <br>
 <br>
 <center><img src="./doc/2.PNG"/></center>
@@ -26,20 +28,20 @@ As animações possuem uma regra na nomenclatura, você pode ler sobre a nomencl
 
 PATH: data\global\CHARS\SO\COF\SOTN1HT.cof
 
-Nessa tela, vamos usar a opção Layers. Cada layer representa uma "parte" do corpo do personagem. As opções na lista da direita, são os exemplos de tipos de itens que cada camada pode utilizar. Por exemplo, a opção LIT é a base de cada classe do Diablo. Ou seja, se a camada HD (Head) estiver com o tipo LIT, a animação será do personagem sem nenhum item equipado para a cabeça. A mesma regra se aplica para as demais partes do corpo.
+On this screen, we are going to use the Layers option. Each layer represents a "part" of the character's body. The options in the list on the right are examples of the types of items each layer can use. For example, the LIT option is the basis of every Diablo class. That is, if the HD layer (Head) is with the LIT type, the animation will be of the character without any item equipped for the head. The same rule applies to the other parts of the body.
 
-Agora que temos a animação que vamos extrair os sprites.
+Now that we have the animation we are going to extract the sprites.
 
-### Como extrair os sprites?
+### How to extract the sprites?
 
-Antes de explicar como o script funciona, vou contar o motivo da criação dele. Para extrairmos os sprites do jogo, nós utilizamos uma ferramenta chamada [Merge DCC](https://d2mods.info/forum/viewtopic.php?t=64449). Nela, nós configuramos a animação e o tipo de camada que vamos extrair. Ela é uma ferramente muito boa, porém eu não encontrei uma forma dela extrair um spritesheet completo para o uso. Ela extrai as imagens em arquivos separados, ou seja, uma animação com 16 direções e 16 sprites geram 256 arquivos. Quem trabalha com gamedev, sabe que um spritesheet bem montado, diminui muito o trabalho na hora de programar as animações. Por esse motivo, criei esse script que faz a extração dos sprites, monta um sprite sheet e remove o fundo das imagens, ficando pronto pra uso em qualquer engine.
+Before explaining how the script works, I'll tell you why it was created. To extract the sprites from the game, we use a tool called [Merge DCC](https://d2mods.info/forum/viewtopic.php?t=64449). In it, we configure the animation and the type of layer that we are going to extract. It is a very good tool, however I haven't found a way for it to extract a complete spritesheet for use. It extracts the images into separate files, that is, an animation with 16 directions and 16 sprites generates 256 files. Anyone who works with gamedev knows that a well-assembled spritesheet greatly reduces the work when programming animations. For this reason, I created this script that extracts the sprites, assembles a sprite sheet and removes the background of the images, being ready for use in any engine.
 
-O script é bem simples de usar, basta abrir o arquivo `config.ini` da raiz do repositório e configurar a animação e o tipo de armadura. Depois é só executar o comando:
+The script is very simple to use, just open the `config.ini` file from the root of the repository and configure the animation and the armor type. Then just run the command:
 ```bash
 python src\main.py
 ```
 
-Na pasta `sheets` serão gerados os spritesheets. Ex:
+The spritesheets will be generated in the `sheets` folder. Ex:
 <br>
 <br>
 <center><img src="./sheets/LG.png"/></center>
@@ -48,11 +50,11 @@ Na pasta `sheets` serão gerados os spritesheets. Ex:
 ---
 ### Project status WIP
 
-- [ ] Amazon Animations
+- [x] Amazon Animations
 - [x] Sorceress Animations
-- [ ] Necromancer Animations
-- [ ] Paladin Animations
-- [ ] Barbarian Animations
+- [x] Necromancer Animations
+- [x] Paladin Animations
+- [x] Barbarian Animations
 - [ ] Expansion Animations
-- [ ] Druid Animations
-- [ ] Assassin Animations
+    - [ ] Druid Animations
+    - [ ] Assassin Animations
