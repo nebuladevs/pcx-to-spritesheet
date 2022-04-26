@@ -7,7 +7,7 @@ Para quem não sabe, o jogo Diablo 2, assim como diversos outros jogos dos anos 
 Para cada animação (Idle, Walk, Run, Attack, etc ...) existem diversas peças que precisamos juntar para criar uma animação completa, de acordo com a necessidade (itens equipados, estado da vida do personagem, etc ...). A imagem abaixo exemplifica melhor essa técnica:
 <br>
 <br>
-<center><img src="./doc/1.png"/></center>
+<center><img src="./doc/1.PNG"/></center>
 <br>
 Dentro dos arquivos do jogo, existem arquivos com a extensão .COF. Esses arquivos possuem as animações com os layers montados. A partir desses arquivos nós conseguimos extrair os sprites, mas para ser possível programarmos a troca de itens no personagem, nós precisamos extrair os sprites de cada parte do corpo de forma separada. Separada a nível de animação e itens equipados.
 
@@ -21,7 +21,7 @@ Para ficar mais fácil a pré-visualização de como a animação deve ficar, in
 As animações possuem uma regra na nomenclatura, você pode ler sobre a nomenclatura na página 12 neste [PDF](https://github.com/collinsmith/riiablo#mpq-viewer). Nesse exemplo, vou utilizar uma animação que pode ser considerada como IDLE.
 <br>
 <br>
-<center><img src="./doc/2.png"/></center>
+<center><img src="./doc/2.PNG"/></center>
 <br>
 
 PATH: data\global\CHARS\SO\COF\SOTN1HT.cof
