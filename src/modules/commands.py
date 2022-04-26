@@ -7,11 +7,11 @@ from modules.folder import getPCXFiles, removeFiles
 from modules.image import generateSpriteSheet
 from modules.utils import chunkArray
 
-def generate_pcx():    
+def generate_pcx(configs):    
     bodyParts = [Body.HEAD, Body.LEFT_ARM, Body.LEGS, Body.RIGHT_ARM, Body.TORSO]
     
     for part in bodyParts:
-        options = { "cof": "SOTN1HT", f"{part.value}": "LIT" }
+        options = { "cof": configs["animation"], f"{part.value}": configs["armor_type"] }
         
         set_merge_dcc_config(options)
         os.system(GENERATE_PCX_COMMAND)
