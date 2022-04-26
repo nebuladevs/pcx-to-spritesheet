@@ -39,6 +39,12 @@ O script é bem simples de usar, basta abrir o arquivo `config.ini` da raiz do r
 python src\main.py
 ```
 
+Na pasta `sheets` serão gerados os spritesheets. Ex:
+<br>
+<br>
+<center><img src="./sheets/LG.png"/></center>
+<br>
+
 ---
 ### Project status WIP
 
