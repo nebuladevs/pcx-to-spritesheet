@@ -1,4 +1,4 @@
-### Diablo 2 SpriteSheet Generator (WIP)
+### The script was created to help me study 2.5D RPG games from the 90's and 2000's. It was not created to facilitate or encourage piracy.
 
 Script to automate the extraction of sprites from the game Diablo 2.
 
