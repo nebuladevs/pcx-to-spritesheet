@@ -15,6 +15,8 @@ def read_config():
     config.read("config.ini")
     
     return {
-        "animation": config.get('CONFIG', 'animation'),
-        "armor_type": config.get('CONFIG', 'armor_type')
+        "ANIMATION": config.get('CONFIG', ANIMATION),
+        "ARMOR_TYPE": config.get('CONFIG', ARMOR_TYPE),
+        "FULL_SPRITE": config.get('CONFIG', FULL_SPRITE),
+        "BODY_PARTS": dict(config.items(BODY_PARTS))
     }

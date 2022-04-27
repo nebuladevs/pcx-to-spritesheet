@@ -47,14 +47,53 @@ The spritesheets will be generated in the `sheets` folder. Ex:
 <center><img src="./sheets/LG.png"/></center>
 <br>
 
+### How to extract an entire sprite?
+
+For a better understanding of how item naming works, read the [PDF](https://github.com/collinsmith/riiablo#mpq-viewer).
+
+In the `config.ini` file, set the item type for each body part. The name of the body parts, follow this image:
+<br>
+<br>
+<center><img src="./doc/1.PNG"/></center>
+<br>
+
+The items you can find in the tool [MPQ Viewer](https://github.com/collinsmith/riiablo#mpq-viewer), at the beginning of the readme there is an explanation on how to find them.
+```ini
+[CONFIG]
+ANIMATION=BANU1HS
+ARMOR_TYPE=BHM
+
+FULL_SPRITE=1
+
+[BODY_PARTS]
+HD=bhm
+TR=med
+LG=HVY
+RA=HVY
+LA=HVY
+RH=mac
+LH=
+SH=BSH
+S1=HVY
+S2=HVY
+```
+Will produce this:
+<br>
+<br>
+<center><img src="./sheets/FULL_SPRITE.png"/></center>
+<br>
+
 ---
 ### Project status WIP
 
+- [ ] Projectile Animations
+- [ ] UI Sprites
+- [x] Full Sprite Animations
 - [x] Amazon Animations
 - [x] Sorceress Animations
 - [x] Necromancer Animations
 - [x] Paladin Animations
 - [x] Barbarian Animations
-- [ ] Expansion Animations
-    - [ ] Druid Animations
-    - [ ] Assassin Animations
+- [x] Expansion Animations
+    - [x] Druid Animations
+    - [x] Assassin Animations

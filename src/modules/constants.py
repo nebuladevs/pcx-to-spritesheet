@@ -1,4 +1,13 @@
+from enums.body import *
+
 MERGE_DCC_PATH = "./merge_dcc/"
 MERGE_DCC_CONFIG_PATH = "merge_dcc/Merge_dcc.ini"
 GENERATE_PCX_COMMAND = "cd merge_dcc && merge_dcc.exe"
 SPRITES_PER_ROW=16
+
+BODY_PARTS_LIST=[Body.HEAD, Body.LEFT_ARM, Body.LEGS, Body.RIGHT_ARM, Body.TORSO]
+
+FULL_SPRITE="FULL_SPRITE"
+ANIMATION="ANIMATION"
+ARMOR_TYPE="ARMOR_TYPE"
+BODY_PARTS="BODY_PARTS"
