@@ -87,6 +87,7 @@ Will produce this:
 ### Project status WIP
 
 - [ ] Projectile Animations
+- [ ] Monsters Animations
 - [ ] UI Sprites
 - [x] Full Sprite Animations
 - [x] Amazon Animations
