@@ -2,7 +2,7 @@ from PIL import Image
 
 def generateSpriteSheet(fileList, fileName):
     width, height = Image.open(fileList[0][0]).size
-    sheetWidth = len(fileList) * width
+    sheetWidth = len(fileList[0]) * width
     sheetHeight = len(fileList) * height
     newImage = Image.new('RGBA', (sheetWidth, sheetHeight), (255, 255, 255, 0))
     
